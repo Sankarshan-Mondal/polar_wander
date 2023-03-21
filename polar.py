@@ -24,7 +24,7 @@ choice = input('Choose "l" if you have paleolattitude, choose "i" if you have in
 
 if choice== "i":
     I = m.radians(float(input('Inclination:')))
-    l = np.arctan(m.tan(I)/2)
+    l = np.arctan((m.tan(I))/2)
 else:
     l = m.radians(float(input('paleolattitude:')))
 
@@ -34,10 +34,10 @@ D = m.radians(float(input('Declination:')))
 
 lp = np.arcsin(m.sin(lx)*m.sin(l)+m.cos(lx)*m.cos(l)*m.cos(D))
 
-if m.sin(l)>=m.sin(lp)*m.sin(lx):
+if (m.sin(l))>= (m.sin(lp))*(m.sin(lx)):
     fp = fx + np.arcsin(m.cos(l)*m.sin(D)/m.cos(lp))
-else:
-    fp = fx - m.pi + np.arcsin(m.cos(l)*m.sin(D)/m.cos(lp))
+elif (m.sin(l))<(m.sin(lp))*(m.sin(lx)):
+    fp = fx - np.arcsin(m.cos(l)*m.sin(D)/m.cos(lp))
 
 lp = m.degrees(lp)
 fp = m.degrees(fp)

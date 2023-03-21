@@ -90,7 +90,7 @@ for i in range(len(l)):
         f = fx[i] + np.arcsin(m.cos(l[i])*m.sin(D[i])/m.cos(lp[i]))
         fp.append(f)
     else:
-        f = fx[i] - m.pi + np.arcsin(m.cos(l[i])*m.sin(D[i])/m.cos(lp[i]))
+        f = fx[i] - np.arcsin(m.cos(l[i])*m.sin(D[i])/m.cos(lp[i]))
         fp.append(f)
 
 fp = np.array(fp)
